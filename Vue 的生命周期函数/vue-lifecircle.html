@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <!-- <script src="./lib/vue.js"></script> -->
+    <title>vue</title>
+</head>
+<body>
+    <div id="app">
+        <div>{{ message }}</div>
+        <button @click= "handelClick">组件 update 按钮</button>
+        <button @click= "handelClick2">组件 destroy 按钮</button>
+    </div>
+    <script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue!'
+        },
+        methods: {
+            handelClick(){
+                this.message= 'Vue already Update';
+            },
+            handelClick2(){
+                this.message= 'Vue already destor ';
+                app.$destroy();
+            },
+        },
+        //Vue的生命周期函数
+        beforeCreate(){
+            console.log('beforeCreate：组件创造之前！');
+        },
+        created(){
+            console.log('created：组件创造完成！');
+        },
+        beforeMount(){
+            console.log('beforeMount：组件渲染之前！');
+        },
+        mounted(){
+            console.log('mounted：组件已经渲染！');
+        },
+        beforeUpdate(){
+            console.log('beforeUpdate：组件更新之前！');
+
+        },
+        updated(){
+            console.log('updated：组件已经完成更新！');
+
+        },
+        beforeDestroy(){
+            console.log('beforeDestroy：组件销毁之前！');
+
+        },
+        destroyed(){
+            console.log('destroyed：组件完成销毁！');
+
+        }
+      })
+    </script>
+</body>
+</html>
