@@ -27,6 +27,7 @@ export default {
   // components: {
   //   HelloWorld
   // },
+  //此处书写的格式应该好好记住，对比差别
   data() {
     return {
       title: "this is a to do list!",
