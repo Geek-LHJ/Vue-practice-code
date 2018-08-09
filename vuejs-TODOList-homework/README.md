@@ -5,7 +5,7 @@
 
 ## DEMO
 
-https://geeklhj.gitee.io/react_router_pages/
+https://geeklhj.gitee.io/vue-practice-code
 
 ## 安装教程
 
