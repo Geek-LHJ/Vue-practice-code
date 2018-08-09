@@ -37,7 +37,7 @@ npm start
 在浏览器里面输入下面端口并打开：http://localhost:8080/
 
 3.运行效果截图以及预览地址:
-> 效果截图：![Vue 实现TODOList 功能]()
+> 效果截图：![Vue 实现TODOList 功能](https://github.com/Geek-LHJ/Vue-practice-code/blob/master/vuejs-TODOList-homework/dist/demo.png)
 
 > 预览地址：[Vue 实现TODOList 功能]()
 
