@@ -1,21 +1,25 @@
-# vue5-5-todolist
+# Vue-ToDo-List
 
-> A Vue.js project
+## 项目介绍
+> vuejs实现简单的todolist效果
 
-## Build Setup
+## DEMO
 
-``` bash
-# install dependencies
+https://geeklhj.gitee.io/react_router_pages/
+
+## 安装教程
+
+git clone https://github.com/Geek-LHJ/Vue-practice-code
+
+cd vuejs-TODOList-homework # 由于没有这个仓库包含多个项目文件
+
 npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+## 使用说明
 
-# build for production with minification
-npm run build
+npm start
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+在浏览器里面输入下面端口并打开：http://localhost:3000/
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+运行效果截图:![Vue 实现TODOList 功能]()
+

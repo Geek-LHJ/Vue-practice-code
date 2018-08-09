@@ -23,13 +23,22 @@
 > 通过 Vue.js 实现一个简单的 TODOList 的功能
 
 #### TODOList文件夹使用说明
-1. 安装教程
-git clone 
+1. 安装下载
+git clone https://github.com/Geek-LHJ/Vue-practice-code
+
+cd vuejs-TODOList-homework
+
 npm install
+
 2. 使用说明
+
 npm start
+
 在浏览器里面输入下面端口并打开：http://localhost:8080/
 
 3.运行效果截图以及预览地址:
+> 效果截图：![Vue 实现TODOList 功能]()
+
+> 预览地址：[Vue 实现TODOList 功能]()
 
 
