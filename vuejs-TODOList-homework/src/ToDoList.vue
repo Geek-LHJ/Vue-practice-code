@@ -41,6 +41,7 @@
         v-bind:content= "item.label"
         v-bind:index= "index"
         v-bind:finished= "item.isFinished"
+        v-bind:flag="true"
         @delete= "handelDelete"
         @change= "handelChange"
       >
@@ -51,6 +52,7 @@
         v-for= "(item,index) of tempover"
         v-bind:key= "index"
         v-bind:content= "item.label"
+        v-bind:flag="false"
       >
       </todo-item>
 
@@ -59,12 +61,14 @@
         v-for= "(item,index) of tempNotover"
         v-bind:key= "index"
         v-bind:content= "item.label"
+        v-bind:flag="false"
       >
       </todo-item>
 
         <div class="list-bottom">
           <p>总共 {{list.length}} 条任务,已完成 {{tempover.length}}条，未完成 {{tempNotover.length}}条 </p>
         </div>
+        {{tempNotover}}
     </div>
   </div>
 </template>
@@ -84,8 +88,6 @@ export default {
       all:true,
       over:false,
       notover:false,
-      tempover: [],
-      tempNotover: [],
       diplayList:true,
       diplayTempover:false,
       diplayTempNotover:false
@@ -136,9 +138,9 @@ export default {
       this.diplayList= false;
       this.diplayTempover= true;
       this.diplayTempNotover= false;
-      this.tempover= this.list.filter(function(item){
-        return item.isfinished;
-      });
+      // this.tempover= this.list.filter(function(item){
+      //   return item.isfinished;
+      // });
       console.log(this.tempover)
     },
     handelClickNotOver(){
@@ -150,9 +152,9 @@ export default {
       this.diplayList= false;
       this.diplayTempover= false;
       this.diplayTempNotover= true;
-      this.tempNotover= this.list.filter(function (item) {
-        return !item.isfinished;
-      })
+      // this.tempNotover= this.list.filter(function (item) {
+      //   return !item.isfinished;
+      // })
       console.log(this.tempNotover)
 
     }
@@ -166,6 +168,18 @@ export default {
         Store.save(list);
       },
       deep: true
+    }
+  },
+  computed:{
+    tempover:function(){
+      return this.list.filter(function(item){
+                return item.isFinished;
+              });
+    },
+    tempNotover:function(){
+      return this.list.filter(function(item){
+                return !item.isFinished;
+              });
     }
   }
 

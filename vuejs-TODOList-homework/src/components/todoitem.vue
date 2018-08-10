@@ -5,10 +5,11 @@
             v-on:click= "handelClick"
             v-bind:class= "{iscompleted: conpleted}"
             >{{content}}</div>
-      <div class="item-manage">
+      <div class="item-manage" v-show="flag">
         <button class="item-over"
             v-show= "conpleted"
-            v-on:click="handelClick">
+            v-on:click="handelClick"
+            >
           标记完成
         </button>
         <button class="item-notover" v-show= "!conpleted" @click="handelClick">标记未完成</button>
@@ -20,7 +21,7 @@
 <script>
 export default {
   name: "",
-  props: ["content", "finished","index"],//"finished",父组件<todo-item> 中：  v-bind:finished= "item.isFinished"
+  props: ["content", "finished","index","flag"],//"finished",父组件<todo-item> 中：  v-bind:finished= "item.isFinished"
   data() {
     return {
       isShow: true,
@@ -58,7 +59,7 @@ export default {
 .item-manage .item-notover{background-color: sandybrown;}
 .item-manage .item-delete{background-color: orangered;margin-right: 10px;}
 
-.iscompleted{ text-decoration: line-through;}
+/* .iscompleted{ text-decoration: line-through;} */
 
 </style>
 
