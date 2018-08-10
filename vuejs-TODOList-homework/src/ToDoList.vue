@@ -33,7 +33,9 @@
           </li>
         </ul>
       </div>
+
       <todo-item
+        v-if="diplayList"
         v-for= "(item,index) of list"
         v-bind:key= "index"
         v-bind:content= "item.label"
@@ -41,9 +43,27 @@
         v-bind:finished= "item.isFinished"
         @delete= "handelDelete"
         @change= "handelChange"
-        ></todo-item>
+      >
+      </todo-item>
+
+      <todo-item
+        v-if="diplayTempover"
+        v-for= "(item,index) of tempover"
+        v-bind:key= "index"
+        v-bind:content= "item.label"
+      >
+      </todo-item>
+
+      <todo-item
+        v-if="diplayTempNotover"
+        v-for= "(item,index) of tempNotover"
+        v-bind:key= "index"
+        v-bind:content= "item.label"
+      >
+      </todo-item>
+
         <div class="list-bottom">
-          <p>总共 {{list.length}} 条任务</p>
+          <p>总共 {{list.length}} 条任务,已完成 {{tempover.length}}条，未完成 {{tempNotover.length}}条 </p>
         </div>
     </div>
   </div>
@@ -63,7 +83,12 @@ export default {
       list: Store.fetch() || [],
       all:true,
       over:false,
-      notover:false
+      notover:false,
+      tempover: [],
+      tempNotover: [],
+      diplayList:true,
+      diplayTempover:false,
+      diplayTempNotover:false
     };
   },
   methods: {
@@ -95,18 +120,41 @@ export default {
       this.over= false;
       this.notover= false;
 
+      //进行数据过滤
+      this.diplayList= true;
+      this.diplayTempover= false;
+      this.diplayTempNotover= false;
+      console.log(this.list)
+
     },
     handelClickOver(){
       //让旁边两个 li 的样式变成正常状态
       this.all= false;
       this.over= true;
       this.notover= false;
+      //进行数据过滤
+      this.diplayList= false;
+      this.diplayTempover= true;
+      this.diplayTempNotover= false;
+      this.tempover= this.list.filter(function(item){
+        return item.isfinished;
+      });
+      console.log(this.tempover)
     },
     handelClickNotOver(){
       //让旁边两个 li 的样式变成正常状态
       this.all= false;
       this.over= false;
       this.notover= true;
+      //进行数据过滤
+      this.diplayList= false;
+      this.diplayTempover= false;
+      this.diplayTempNotover= true;
+      this.tempNotover= this.list.filter(function (item) {
+        return !item.isfinished;
+      })
+      console.log(this.tempNotover)
+
     }
   },
   //用于检测数据的变化并存储到  localStorage 当中
@@ -119,10 +167,8 @@ export default {
       },
       deep: true
     }
-  },
-  computed:{
-
   }
+
 };
 </script>
 

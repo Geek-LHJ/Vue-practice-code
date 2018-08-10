@@ -39,6 +39,11 @@ export default {
       // alert(this.index)
       this.$emit("delete", this.index);
     }
+  },
+  computed:{
+    // conpleted: function () {
+    //   return this.finished
+    // }
   }
 };
 </script>
