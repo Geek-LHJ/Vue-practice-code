@@ -5,7 +5,7 @@
 
 ## DEMO
 
-https://geeklhj.gitee.io/react_router_pages/
+https://geeklhj.gitee.io/vue-practice-code
 
 ## 安装教程
 
@@ -19,7 +19,7 @@ npm install
 
 npm start
 
-在浏览器里面输入下面端口并打开：http://localhost:3000/
+在浏览器里面输入下面端口并打开：http://localhost:8080/
 
-运行效果截图:![Vue 实现TODOList 功能]()
+运行效果截图:![Vue 实现TODOList 功能](./dist/demo.png)
 
