@@ -5,7 +5,8 @@
       <p>添加任务，管理每日计划</p>
     </div>
     <div class="box-input">
-      <input placeholder="今天计划完成什么？"
+      <input
+        placeholder="今天计划完成什么？"
         v-model= "inputValue"
         v-on:keyup.enter= "handleSubmit"/>
 

@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       isShow: true,
-      conpleted:false
+      conpleted:this.finished
     };
   },
   methods: {
