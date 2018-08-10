@@ -68,7 +68,7 @@
         <div class="list-bottom">
           <p>总共 {{list.length}} 条任务,已完成 {{tempover.length}}条，未完成 {{tempNotover.length}}条 </p>
         </div>
-        {{tempNotover}}
+        <!-- {{tempNotover}} -->
     </div>
   </div>
 </template>
@@ -77,14 +77,14 @@
 //引入子组件
 import ToDoItem from "./components/todoitem";
 //引入localStorage库，保存数据到本地
-import Store from "./store";
+// import Store from "./store";
 export default {
   name: "ToDoList",
   components: { "todo-item": ToDoItem },
   data() {
     return {
       inputValue: "",
-      list: Store.fetch() || [],
+      list: [],
       all:true,
       over:false,
       notover:false,
@@ -165,7 +165,7 @@ export default {
       handler: function(list) {
         // console.log(val, oldVal);
         //往  localStorage 中存list数据
-        Store.save(list);
+        //Store.save(list);
       },
       deep: true
     }
